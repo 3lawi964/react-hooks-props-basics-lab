@@ -1,12 +1,21 @@
 import React from "react";
+import Links from "./Links";
+import user from "../data/user";
 
-function About() {
+function About({ bio }) {
+  // let bioCheck;
+  // if (bio) {
+  //   bioCheck = bio;
+  // } else {
+  //   bioCheck = "";
+  // }
   return (
     <div id="about">
       <h2>About Me</h2>
-      <p>Put the bio in here</p>
+      {/* <p>{bioCheck}</p> */}
+      {bio ? <p>{bio}</p> : ""}
       <img src="https://i.imgur.com/mV8PQxj.gif" alt="I made this" />
-      {/* add your <Links /> component here */}
+      <Links linkedin={user.links.linkedin} github={user.links.github} />
     </div>
   );
 }
